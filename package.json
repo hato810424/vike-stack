@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "prod": "npm run build && npm run server:prod",
+    "build": "vite build",
+    "server": "tsx ./server/index.ts",
+    "server:dev": "npm run server",
+    "server:prod": "cross-env NODE_ENV=production npm run server"
+  },
+  "type": "module",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "node-fetch": "^3.3.2",
+    "preact": "^10.20.1",
+    "preact-render-to-string": "^6.4.1",
+    "vike": "^0.4.168",
+    "vite": "^5.0.10"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^1.9.1",
+    "@hono/vite-dev-server": "^0.10.0",
+    "@preact/preset-vite": "^2.8.2",
+    "@types/node": "^20.12.5",
+    "hono": "^4.2.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4"
+  }
+}
