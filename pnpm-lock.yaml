@@ -14,6 +14,9 @@ dependencies:
   '@emotion/server':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/css@11.11.2)
+  '@hono/zod-validator':
+    specifier: ^0.2.1
+    version: 0.2.1(hono@4.2.2)(zod@3.22.4)
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
@@ -35,6 +38,9 @@ dependencies:
   vite:
     specifier: ^5.0.10
     version: 5.2.8(@types/node@20.12.5)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@hono/node-server':
@@ -892,6 +898,16 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@hono/zod-validator@0.2.1(hono@4.2.2)(zod@3.22.4):
+    resolution: {integrity: sha512-HFoxln7Q6JsE64qz2WBS28SD33UB2alp3aRKmcWnNLDzEL1BLsWfbdX6e1HIiUprHYTIXf5y7ax8eYidKUwyaA==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
+    dependencies:
+      hono: 4.2.2
+      zod: 3.22.4
+    dev: false
+
   /@jridgewell/gen-mapping@0.3.5:
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
@@ -1620,7 +1636,6 @@ packages:
   /hono@4.2.2:
     resolution: {integrity: sha512-mDmjBHF6uBNN3TASdAbDCFsN9FLbrlgXyFZkhLEkU7hUgk0+T9hcsUrL/nho4qV+Xk0RDHx7gop4Q1gelZZVRw==}
     engines: {node: '>=16.0.0'}
-    dev: true
 
   /html-tokenize@2.0.1:
     resolution: {integrity: sha512-QY6S+hZ0f5m1WT8WffYN+Hg+xm/w5I8XeUcAq/ZYP5wVC8xbKi4Whhru3FtrAebD5EhBW8rmFzkDI6eCAuFe2w==}
@@ -2343,4 +2358,3 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
-    dev: true

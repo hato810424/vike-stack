@@ -29,6 +29,12 @@ const config: UserConfig = {
   },
   optimizeDeps: {
     include: ['preact', 'preact/devtools', 'preact/debug', 'preact/jsx-dev-runtime', 'preact/hooks']
+  },
+  server: {
+    hmr: true,
+    watch: {
+      ignored: ['./server/**'],
+    }
   }
 }
 

@@ -4,7 +4,9 @@ import { serve } from "@hono/node-server"
 import { renderPage } from 'vike/server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { compress } from 'hono/compress'
-import { poweredBy } from "hono/powered-by";
+import { poweredBy } from "hono/powered-by"
+
+import apiRoute from "./api.js"
 
 const isProduction = process.env.NODE_ENV === 'production'
 const port = Number(process.env.PORT) || 3000
@@ -13,6 +15,8 @@ const app = new Hono()
 
 app.use(poweredBy())
 app.use(compress())
+
+app.route('/', apiRoute)
 
 if (isProduction) {
   app.use("/*", serveStatic({

@@ -2,5 +2,5 @@
 
 - Vike
 - Preact
-- Hono
+- Hono + RPC
 - @emotion/css (SSR)
