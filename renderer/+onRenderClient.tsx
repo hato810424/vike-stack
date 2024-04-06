@@ -6,6 +6,9 @@ import { PageShell } from './PageShell'
 import { getPageTitle } from './getPageTitle'
 import type { OnRenderClientAsync } from 'vike/types'
 
+import { CacheProvider } from '@emotion/react'
+import { cache } from '../utils/emotion'
+
 const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRenderClientAsync> => {
   const { Page } = pageContext
 
@@ -17,9 +20,11 @@ const onRenderClient: OnRenderClientAsync = async (pageContext): ReturnType<OnRe
   if (!container) throw new Error('DOM element #vike-root not found')
 
   const page = (
-    <PageShell pageContext={pageContext}>
-      <Page />
-    </PageShell>
+    <CacheProvider value={cache}>
+      <PageShell pageContext={pageContext}>
+        <Page />
+      </PageShell>
+    </CacheProvider>
   )
   if (pageContext.isHydration) {
     hydrate(page, container)

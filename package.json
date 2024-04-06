@@ -9,6 +9,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/server": "^11.11.0",
+    "clsx": "^2.1.0",
     "cross-env": "^7.0.3",
     "node-fetch": "^3.3.2",
     "preact": "^10.20.1",

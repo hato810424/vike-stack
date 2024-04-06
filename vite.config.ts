@@ -22,6 +22,11 @@ const config: UserConfig = {
       injectClientScript: false,
     }),
   ],
+  resolve: {
+    alias: {
+      react: 'preact/compat',
+    }
+  },
   optimizeDeps: {
     include: ['preact', 'preact/devtools', 'preact/debug', 'preact/jsx-dev-runtime', 'preact/hooks']
   }

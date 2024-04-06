@@ -3,3 +3,4 @@
 - Vike
 - Preact
 - Hono
+- @emotion/css (SSR)
