@@ -3,12 +3,15 @@
 export { usePageContext }
 export { PageContextProvider }
 
-import React, { useContext } from 'react'
+import { createContext } from 'preact';
+import { useContext } from 'preact/hooks';
+
+import type { ComponentChildren } from 'preact'
 import type { PageContext } from 'vike/types'
 
-const Context = React.createContext<PageContext>(undefined as unknown as PageContext)
+const Context = createContext<PageContext>(undefined as unknown as PageContext)
 
-function PageContextProvider({ pageContext, children }: { pageContext: PageContext; children: React.ReactNode }) {
+function PageContextProvider({ pageContext, children }: { pageContext: PageContext; children: ComponentChildren }) {
   return <Context.Provider value={pageContext}>{children}</Context.Provider>
 }
 
