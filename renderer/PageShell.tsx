@@ -18,6 +18,11 @@ function PageShell({ children, pageContext }: { children: ComponentChildren; pag
           <Link href="/">Welcome</Link>
           <Link href="/about">About</Link>
           <Link href="/star-wars">Data Fetching</Link>
+          <Link href="/login">Login</Link>
+          <Link href="/account">Account</Link>
+          {pageContext.auth != null && (
+            <p>Hello {pageContext.auth?.id ?? ""}!!</p>
+          )}
         </Sidebar>
         <Content>{children}</Content>
       </Layout>

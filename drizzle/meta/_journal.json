@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712480255710,
+      "tag": "0000_misty_garia",
+      "breakpoints": true
+    }
+  ]
+}

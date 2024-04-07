@@ -1,2 +1,4 @@
 node_modules/
 dist/
+.vscode/
+server/auth/db.sqlite

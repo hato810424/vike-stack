@@ -1,6 +1,12 @@
 # vike-stack
 
-- Vike
-- Preact
-- Hono + RPC
-- @emotion/css (SSR)
+- Base
+  - Vike
+  - Hono
+  - Preact
+- Auth
+  - Lucia Auth
+    - @lucia-auth/adapter-drizzle
+  - Drizzle ORM
+- CSS
+  - @emotion/css (SSR)

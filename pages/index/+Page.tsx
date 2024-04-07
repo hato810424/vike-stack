@@ -4,7 +4,7 @@ import { css } from '../../utils/emotion'
 import { Counter } from './Counter'
 import { useEffect, useState } from 'preact/hooks'
 
-import type { AppType } from '../../server/api'
+import type { AppType } from '../../server/rpc'
 import { hc } from 'hono/client'
 
 function Page() {

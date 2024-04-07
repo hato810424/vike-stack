@@ -1,4 +1,7 @@
 // https://github.com/phonzammi/vike-hono-example/blob/main/server/index.ts
+const isProduction = process.env.NODE_ENV === 'production'
+const port = Number(process.env.PORT) || 3000
+
 import { Hono } from 'hono'
 import { serve } from "@hono/node-server"
 import { renderPage } from 'vike/server'
@@ -7,16 +10,22 @@ import { compress } from 'hono/compress'
 import { poweredBy } from "hono/powered-by"
 
 import rpcRoute from "./rpc.js"
+import authRoute from "./auth.js"
 
-const isProduction = process.env.NODE_ENV === 'production'
-const port = Number(process.env.PORT) || 3000
+import type { Session, User } from 'lucia'
 
-const app = new Hono()
+const app = new Hono<{
+	Variables: {
+		user: User | null;
+		session: Session | null;
+	};
+}>();
 
 app.use(poweredBy())
 app.use(compress())
 
 app.route('/', rpcRoute)
+app.route('/', authRoute)
 
 if (isProduction) {
   app.use("/*", serveStatic({
@@ -26,7 +35,8 @@ if (isProduction) {
 
 app.get("*", async (c, next) => {
   const pageContextInit = {
-    urlOriginal: c.req.url
+    urlOriginal: c.req.url,
+    auth: c.get("user"),
   }
   const pageContext = await renderPage(pageContextInit)
   const { httpResponse } = pageContext
