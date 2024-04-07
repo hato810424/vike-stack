@@ -33,7 +33,7 @@ const config: UserConfig = {
   server: {
     hmr: true,
     watch: {
-      ignored: ['./server/**'],
+      ignored: ['server/**'],
     }
   }
 }
