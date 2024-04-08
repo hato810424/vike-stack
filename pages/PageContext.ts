@@ -1,11 +1,10 @@
-import type { AuthUser } from "@hono/auth-js";
+import type { User } from "lucia";
 
 // https://vike.dev/pageContext#typescript
 declare global {
   namespace Vike {
     interface PageContext {
-      time: Date,
-      auth: AuthUser
+      auth: User
     }
   }
 }

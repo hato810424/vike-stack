@@ -1,6 +1,6 @@
 export default Page
 
-import { navigate, reload } from "vike/client/router";
+import { reload } from "vike/client/router";
 import { usePageContext } from "../../renderer/usePageContext";
 import { hc } from "hono/client";
 
